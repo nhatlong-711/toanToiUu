@@ -96,7 +96,7 @@ def main_evaluate_and_plot(X_test, y_test):
     for i, (name, info) in enumerate(models_info.items()):
         ax = axes[i]
         
-        # Duyệt qua 3 file loss của mô hình này và vẽ chung lên 1 biểu đồ con
+        #
         for lr_label, loss_path in info["losses"].items():
             try:
                 loss_data = np.load(loss_path)
