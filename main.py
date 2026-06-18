@@ -16,23 +16,23 @@ def rmse(y_true, y_pred):
 
 models_info = {
     "Adam": {
-        "best_theta": r"D:\STUDY\25-26\HK2\toan_toi_uu\toanToiUu\results\weights\adam\adam_theta01.npy",
-        "best_loss_path": r"D:\STUDY\25-26\HK2\toan_toi_uu\toanToiUu\results\weights\adam\adam_loss01.npy",
+        "best_theta": "results/weights/adam/adam_theta1.npy",
+        "best_loss_path": "results/weights/adam/adam_loss1.npy",
         "color": "#e74c3c"
     },
     "Momentum": {
-        "best_theta": r"D:\STUDY\25-26\HK2\toan_toi_uu\toanToiUu\results\weights\momentum\momentum_weights_005.npy",
-        "best_loss_path": r"D:\STUDY\25-26\HK2\toan_toi_uu\toanToiUu\results\weights\momentum\momentum_loss_history_005.npy",
+        "best_theta": "results/weights/momentum/momentum_weights_005.npy",
+        "best_loss_path": "results/weights/momentum/momentum_loss_history_005.npy",
         "color": "#3498db"
     },
     "Nesterov": {
-        "best_theta": r"D:\STUDY\25-26\HK2\toan_toi_uu\toanToiUu\results\weights\Nesterov\nesterov_weights.npy",
-        "best_loss_path": r"D:\STUDY\25-26\HK2\toan_toi_uu\toanToiUu\results\weights\Nesterov\nesterov_loss_05.npy",
+        "best_theta": "results/weights/Nesterov/nesterov_weights.npy",
+        "best_loss_path": "results/weights/Nesterov/nesterov_loss_05.npy",
         "color": "#2ecc71"
     },
     "RMSProp": {
-        "best_theta": r"D:\STUDY\25-26\HK2\toan_toi_uu\toanToiUu\results\weights\RMSProp\rms_weights.npy",
-        "best_loss_path": r"D:\STUDY\25-26\HK2\toan_toi_uu\toanToiUu\results\weights\RMSProp\rms_loss_01.npy",
+        "best_theta": "results/weights/RMSProp/rms_weights.npy",
+        "best_loss_path": "results/weights/RMSProp/rms_loss_01.npy",
         "color": "#9b59b6"
     }
 }
@@ -116,14 +116,14 @@ def main_evaluate_and_plot(X_test_final, X_test_raw, y_test):
     plt.legend(fontsize=11, loc='upper right')
     plt.grid(True, linestyle='--', alpha=0.6)
     
-    plots_dir = r"D:\STUDY\25-26\HK2\toan_toi_uu\toanToiUu\results\plots"
+    plots_dir = "results/plots"
     os.makedirs(plots_dir, exist_ok=True)
     combined_plot_path = os.path.join(plots_dir, "best_optimizers_comparison.png")
     plt.savefig(combined_plot_path, dpi=300, bbox_inches='tight')
     plt.show()
     
 if __name__ == "__main__":
-    test_path = r"D:\STUDY\25-26\HK2\toan_toi_uu\toanToiUu\dataset\foodDeli_processed\test_processed.csv"
+    test_path = "dataset/foodDeli_processed/train_processed.csv"
     df_test = pd.read_csv(test_path).dropna()
     
     target_column = 'Time_taken' 
